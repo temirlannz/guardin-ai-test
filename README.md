@@ -201,35 +201,3 @@ http://localhost:8001
 ## **Известные ограничения**
 
 *  Frontend пока запускается только локально без докер
-
----
-
-## **Пример запросов (curl)**
-
-```bash
-# Регистрация
-curl -X POST http://localhost:8001/v1/auth/register \
-  -H "Content-Type: application/json" \
-  -d '{"first_name":"John","last_name":"Doe","email":"john@doe.com","password":"Test1234!"}'
-
-# Логин
-curl -X POST http://localhost:8001/v1/auth/login \
-  -H "Content-Type: application/json" \
-  -d '{"email":"john@doe.com","password":"Test1234!"}' \
-  -c cookie.txt
-
-# Проверка профиля
-curl -X GET http://localhost:8001/v1/auth/me \
-  -b cookie.txt
-
-# Logout
-curl -X POST http://localhost:8001/v1/auth/logout \
-  -b cookie.txt
-```
-
----
-
-## 🧭 **Автор и стек**
-
-**Автор:** Temirlan Zhanibek
-**Стек:** `NestJS` • `Prisma` • `PostgreSQL` • `Redis` • `R
