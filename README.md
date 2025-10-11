@@ -2,6 +2,58 @@
 
 ## ⚡️ Quick Start
 
+Создать .env в папке guardin-ai-front
+
+```env
+VITE_API_URL=http://localhost:8001
+```
+
+Создать .env в папке guardin-ai-backend
+
+```env
+# Environment variables declared in this file are automatically made available to Prisma.
+# See the documentation for more detail: https://pris.ly/d/prisma-schema#accessing-environment-variables-from-the-schema
+
+# Prisma supports the native connection string format for PostgreSQL, MySQL, SQLite, SQL Server, MongoDB and CockroachDB.
+# See the documentation for all the connection string options: https://pris.ly/d/connection-strings
+
+# The following `prisma+postgres` URL is similar to the URL produced by running a local Prisma Postgres 
+# server with the `prisma dev` CLI command, when not choosing any non-default ports or settings. The API key, unlike the 
+# one found in a remote Prisma Postgres URL, does not contain any sensitive information.
+
+NODE_ENV=local
+
+APP_HOST='localhost'
+APP_PORT=8001
+
+ALLOWED_ORIGIN='http://localhost:5173'
+
+FRONTEND_HOST=http://localhost:5173'
+
+COOKIE_SECRET=secret
+SESSION_SECRET=secret
+SESSION_NAME=guardin_session
+SESSION_DOMAIN=localhost
+# 12 часов
+SESSION_MAX_AGE=43200000
+SESSION_HTTP_ONLY=false
+SESSION_SECURE=false
+SESSION_FOLDER=sessions:
+SESSION_SAME_SITE=lax
+
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres123
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=guardin_db
+POSTGRES_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}
+
+REDIS_PASSWORD=redis123
+REDIS_HOST=redis
+REDIS_PORT=6379
+REDIS_URL=redis://default:redis123@redis:6379
+```
+
 ```bash
 # Запустить backend + PostgreSQL + Redis
 cd guardin-ai-backend
