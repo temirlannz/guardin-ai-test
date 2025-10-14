@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import {Routes, Route, Navigate} from "react-router-dom";
 import { BaseLayout } from "@/shared/ui/layout/base-layout";
 import { LoginPage } from "@/pages/auth/login/page";
 import { RegisterPage } from "@/pages/auth/register/page";
@@ -11,6 +11,8 @@ export default function App() {
         <BaseLayout>
             <Routes>
                 <Route element={<GuestRoute />}>
+                    <Route path="/auth" element={<Navigate to="/auth/login" replace />} />
+
                     <Route path="/auth/login" element={<LoginPage />} />
                     <Route path="/auth/register" element={<RegisterPage />} />
                 </Route>
