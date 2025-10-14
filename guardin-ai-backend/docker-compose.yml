@@ -16,9 +16,9 @@ services:
     restart: unless-stopped
     networks:
       - backend-net
-    volumes:
-      - ./:/app
-      - /app/node_modules
+#    volumes:
+#      - ./:/app
+#      - /app/node_modules
 
   postgres:
     image: postgres:15-alpine
